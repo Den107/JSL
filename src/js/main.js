@@ -1,1 +1,3 @@
-console.log('Hello!');
+import './lib/lib';
+
+JSL('.active').toggleDisplay();
