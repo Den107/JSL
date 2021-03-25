@@ -1,3 +1,8 @@
-import './lib/lib';
+import JSL from './lib/lib';
 
-JSL('.active').toggleDisplay();
+
+
+
+
+
+
