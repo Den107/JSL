@@ -1,16 +1,14 @@
 import JSL from './lib/lib';
 
 
-JSL('button').on('click', function () {
-  JSL('div').eq(1).toggleClass('active');
+JSL('#first').on('click', () => {
+  JSL('div').eq(1).fadeOut(800);
 });
 
-JSL('div').click(function () {
-  console.log(JSL(this).index());
+JSL('[data-count="second"]').on('click', () => {
+  JSL('div').eq(2).fadeOut(800);
 });
 
-// // console.log(JSL('div').eq(2).find('.some'));
-// console.log(JSL('.some').closest('.findme').addClass('dad'));
-JSL('.findme').fadeIn(1800);
-// console.log(JSL('div'));
-// console.log(JSL('.findme').siblings());
+JSL('button').eq(2).on('click', () => {
+  JSL('.w-500').fadeOut(800);
+});
