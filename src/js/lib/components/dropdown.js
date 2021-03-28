@@ -1,5 +1,8 @@
 import JSL from '../core';
 
+/**
+ * Функция инициализирует дропдаун меню на переданной кнопке, важно чтобы id кнопки и аттрибут data-toggle-id у выпадающего списка совпадали
+ */
 JSL.prototype.dropdown = function () {
   for (let i = 0; i < this.length; i++) {
     const id = this[i].getAttribute('id');

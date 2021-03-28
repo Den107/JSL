@@ -1,5 +1,10 @@
 import JSL from '../core';
 
+/**
+ * 
+ * @param {boolean} created параметр, определяющий, было ли создано модальное окно
+ * Функция создает модальное окно на переданном элементе
+ */
 JSL.prototype.modal = function (created) {
   for (let i = 0; i < this.length; i++) {
     const target = this[i].getAttribute('data-target');
@@ -28,11 +33,46 @@ JSL.prototype.modal = function (created) {
       }
     });
   }
-
 };
 
 JSL('[data-toggle="modal"]').modal();
 
+/**
+ * 
+ * @param {{
+ *  text:{
+ *    title: string,
+ *    body: string
+ *  },
+ *   btns:{
+ *    count: int,
+ *    settings:[
+ *    [
+ *      text on button: string,
+ *      [classes: string],
+ *      on click close modal?: boolean,
+ *     cb: Function
+ *    ]
+ *    ]
+ *  }
+ * }} param0 передается объект вида: {
+  text: {
+    title: 'Заголовок модального окна',
+    body: `Основной текст модального окна`,
+  },
+  btns: {
+    count: количество кнопок,
+    settings: [ массив с массивами кнопок
+      [ массив с настройками одной кнопки
+        'Текст на кнопке',
+        [массив с классами кнопки],
+        true или false, будет ли по нажатию на эту кнопку закрываться модальное окно,
+        callback-функция на кнопке, необязательный параметр
+      ],
+    ]
+  }
+}
+ */
 JSL.prototype.createModal = function ({ text, btns } = {}) {
   for (let i = 0; i < this.length; i++) {
     let modal = document.createElement('div');
