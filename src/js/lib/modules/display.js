@@ -1,5 +1,9 @@
 import JSL from '../core';
 
+/**
+ * функция показывает элемент
+ * @returns 
+ */
 JSL.prototype.show = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) {
@@ -10,6 +14,10 @@ JSL.prototype.show = function () {
   return this;
 };
 
+/**
+ * функция скрывает элемент
+ * @returns 
+ */
 JSL.prototype.hide = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) {
@@ -20,6 +28,10 @@ JSL.prototype.hide = function () {
   return this;
 };
 
+/**
+ * функция меняет видимость элемента
+ * @returns 
+ */
 JSL.prototype.toggleDisplay = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) {

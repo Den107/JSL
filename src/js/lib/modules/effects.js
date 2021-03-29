@@ -25,6 +25,13 @@ JSL.prototype.animateOverTime = function (dur, cb, fin) {
   return _animateOverTime;
 };
 
+/**
+ * анимация появления элемента, в качестве параметра передается колличество миллисекунд - время длительности анимации
+ * @param {Number} dur время выполнения анимации
+ * @param {String} display 
+ * @param {Function} fin 
+ * @returns 
+ */
 JSL.prototype.fadeIn = function (dur, display, fin) {
   for (let i = 0; i < this.length; i++) {
     this[i].style.display = display || 'block';
@@ -39,6 +46,12 @@ JSL.prototype.fadeIn = function (dur, display, fin) {
   return this;
 };
 
+/**
+ * анимация исчезновения элемента, в качестве параметра передается колличество миллисекунд - время длительности анимации
+ * @param {Number} dur время выполнения анимации
+ * @param {Function} fin 
+ * @returns 
+ */
 JSL.prototype.fadeOut = function (dur, fin) {
   for (let i = 0; i < this.length; i++) {
 
@@ -56,6 +69,13 @@ JSL.prototype.fadeOut = function (dur, fin) {
   return this;
 };
 
+/**
+ * анимация переключения видимости элемента, в качестве параметра передается колличество миллисекунд - время длительности анимации
+ * @param {Number} dur время выполнения анимации
+ * @param {String} display 
+ * @param {Function} fin 
+ * @returns 
+ */
 JSL.prototype.fadeToggle = function (dur, display, fin) {
   for (let i = 0; i < this.length; i++) {
     if (window.getComputedStyle(this[i]).display === 'none') {
