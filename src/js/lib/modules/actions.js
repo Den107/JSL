@@ -1,5 +1,10 @@
 import JSL from '../core';
 
+/**
+ * если параметр не передается, то функция получает html-разметку элемента, либо можно передать html-строку для встраивания в элемент
+ * @param {String} content html-шаблон 
+ * @returns html-string
+ */
 JSL.prototype.html = function (content) {
   for (let i = 0; i < this.length; i++) {
     if (content) {
@@ -11,6 +16,11 @@ JSL.prototype.html = function (content) {
   return this;
 };
 
+/**
+ * функция выбирает тот элемент, номер которого передан параметром, рассчет с 0
+ * @param {Number} i  
+ * @returns 
+ */
 JSL.prototype.eq = function (i) {
   const swap = this[i];
   const objLength = Object.keys(this).length;
@@ -36,6 +46,11 @@ JSL.prototype.index = function () {
   return children.findIndex(findMyIndex);
 };
 
+/**
+ * функция находит переданный селектор внутри селектора на котором вызвана функция
+ * @param {String} selector селектор, который нужно найти
+ * @returns 
+ */
 JSL.prototype.find = function (selector) {
   let numberOfItems = 0;
   let counter = 0;
@@ -65,6 +80,11 @@ JSL.prototype.find = function (selector) {
   return this;
 };
 
+/**
+ * функция находит ближайший селектор снаружи селектора, к которому применена функция
+ * @param {String} selector селектор, который нужно найти
+ * @returns 
+ */
 JSL.prototype.closest = function (selector) {
   let counter = 0;
 
@@ -84,6 +104,10 @@ JSL.prototype.closest = function (selector) {
   return this;
 };
 
+/**
+ * функция возвращает все братские элементы(на одном уровне) с выбранным элементом
+ * @returns 
+ */
 JSL.prototype.siblings = function () {
   let numberOfItems = 0;
   let counter = 0;
